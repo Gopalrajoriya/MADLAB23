@@ -1,0 +1,275 @@
+ SUBMITTED BY:GOPAL RAJORIYA
+ ENR.NO:211B123
+ BATCH:B4
+ 
+ 1. Make your first inheritance based design
+There were Pandavs and Kauravs. Arjun and Bheem were Pandavs. Duryodhan was a
+Kaurav. Pandavs were characterized by their skills of fighting (fight ( )), obedience (obey
+( )), and kindness (kind ( )). Though Bheem was little less kind but equally obedient as
+Arjun. Kauravs were notorious for disobeying and cruelty. But Kauravs were fighters.
+Kauravs were 100 in numbers, but one of them ‘Vikarn’ was a noble man- a good
+fighter, kind and obedient. If you dive a little more in the history, you will come to know
+that Pandavs and Kauravs were actually Bharatvanshi. And all bharatvanshis had been
+fighters.
+You are required to create a design first on paper and then write implementation on
+your machine. Make abstract classes and concrete classes. Decide which methods
+should be made abstract or non-abstract.
+SOL:
+Save as bharatvanshi.java
+abstract class bharatvanshi
+{
+ void fighter()
+ {
+ System.out.println(" bharatvanshi figter");
+ }
+ abstract void kind();
+ abstract void obey();
+ abstract void notorious();
+}
+Save as pandavas.java
+class pandavas extends bharatvanshi
+{
+ void obey()
+ {
+ System.out.println("pandavas obedience");
+ }
+ void kind()
+ {
+ System.out.println("pandavas kind");
+ }
+ void notorious()
+ {
+ System.out.println("not notorious");
+ }
+}
+Save as Kauravas.java
+class Kauravas extends bharatvanshi{
+ void notorious()
+ {
+ System.out.println("notorious kauravas");
+ }
+ void obey()
+ {
+ System.out.println("disobedience kauravas");
+ }
+ void kind()
+ {
+ System.out.println(" not kind");
+ }
+}
+Save as bheem.java
+class bheem extends pandavas{
+ void kind()
+ {
+ System.out.println("less kind");
+ }
+ void obey()
+ {
+ System.out.println("obedeience bheem");
+ }
+}
+Save as arjun.java
+class arjun extends pandavas{
+ void kind()
+ {
+ System.out.println("arjun is kind");
+ }
+ void obey()
+ {
+ System.out.println("obedeience arjun");
+ }
+}
+Save as duryodhan.java
+class duryodhan extends Kauravas{
+ void notorious()
+ {
+ System.out.println("duryodhan were disobedient");
+ }
+ void obey()
+ {
+ System.out.println("disobedience duryodhan");
+ }
+}
+Save as vikarn.java
+class vikarn extends pandavas{
+ void kind()
+ {
+ System.out.println("vikarn is kind");
+ }
+ void obey()
+ {
+ System.out.println("obedeient vikarn");
+ }
+}
+Savw as Main.java
+public class Main
+{
+public static void main(String[] args) {
+ arjun a=new arjun();
+ a.fighter();
+ a.obey();
+ a.kind();
+ bheem b=new bheem();
+ b.fighter();
+ b.obey();
+ b.kind();
+ vikarn v=new vikarn();
+ v.fighter();
+ v.obey();
+ v.kind();
+ pandavas p=new pandavas();
+ p.kind();
+ p.obey();
+ duryodhan d=new duryodhan();
+ d.notorious();
+ d.fighter();
+}
+}
+OUTPUT:
+bharatvanshi figter
+obedeience arjun
+arjun is kind
+bharatvanshi figter
+obedeience bheem
+less kind
+bharatvanshi figter
+obedeient vikarn
+vikarn is kind
+pandavas kind
+pandavas obedience
+duryodhan were disobedient
+bharatvanshi figter
+Q 2. Interfaces to be implemented by first non-abstract class
+Make an interface ‘Testable’ that contains a method declaration for display ( ).
+a) Create a class ‘Test’ that implements Testable. Compile this class, and write your
+observations.
+b) Create another abstract class ‘AbsTest’ implements Testable. Compile this class,
+and write your observations.
+SOL:
+Save as Testtable.java
+interface Testtable
+{
+ void display();
+}
+Save as Test.java
+class test implements Testtable{
+
+}
+public class Main
+{
+public static void main(String[] args) {
+Test t=new Test();
+t.display();
+}
+}
+OUTPUT:
+Error:cannot access test
+abstract class AbsTest implements Testtable{
+ void display()
+ {
+ System.out.println("abstract class");
+ }
+}
+public class Main
+{
+public static void main(String[] args) {
+AbsTest t=new AbsTest();
+t.display();
+}
+}
+OUTPUT:
+Error Abstest is abstract;cannot be instantiated
+3. Beautiful Code: Separate out uncompromisers
+JUET students create a game of ducks. There were Rubber Ducks (RD), Wooden Ducks
+(WD), RedHead Ducks (RHD), and Lake Ducks (LD), as of now. There may be more in the
+future. As it can be guessed, all ducks can swim. RD and WD can’t fly. RD squeaks. WD is
+mute. RHD and LD quack. Design and Implement.
+You might be tempted to make an abstract class ‘Duck’ by keeping fly and quack
+behaviors abstract and swim behavior defined. Although this approach is not wrong, but
+definitely not the best. Think and write some beautiful code using interfaces.
+SOL:
+Save as Duck.java
+abstract class Ducks{
+ void swim()
+ {
+ System.out.println("can swim");
+ }
+ abstract void fly();
+ abstract void speak();
+}
+Save as RD.java
+class RD extends Ducks{
+ void fly()
+ {
+ System.out.println("RD cant fly");
+ }
+ void speak()
+ {
+ System.out.println("RD squeaks");
+ }
+}
+Save as WD.java
+class WD extends Ducks{
+ void fly()
+ {
+ System.out.println("WD cant fly");
+ }
+ void speak()
+ {
+ System.out.println("WD mute");
+ }
+}
+Save as RHD.java
+class RHD extends Ducks{
+ void fly()
+ {
+ System.out.println("RHD can fly");
+ }
+ void speak()
+ {
+ System.out.println("RHD quack");
+ }
+}
+Save as LD.java
+class LD extends Ducks{
+ void fly()
+ {
+ System.out.println(" LD can fly");
+ }
+ void speak()
+ {
+ System.out.println("LD quack");
+ }
+}
+Save as Main.java
+public class Main
+{
+public static void main(String[] args) {
+RD R=new RD();
+R.fly();
+R.speak();
+R.swim();
+LD L=new LD();
+L.fly();
+L.speak();
+L.swim();
+RHD RH=new RHD();
+RH.fly();
+RH.speak();
+RH.swim();
+WD W=new WD();
+W.fly();
+W.speak();
+W.swim();
+}
+}
+OUTPUT:
+RD cant fly
+RD squeaks
+can swim
+LD can fly
+LD quack
+can swim
+RHD can fly
+RHD quack
+can swim

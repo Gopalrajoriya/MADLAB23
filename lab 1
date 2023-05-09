@@ -1,0 +1,90 @@
+
+
+ SUBMITTED BY:GOPAL RAJORIYA
+ ENR.NO:211B123
+ BATCH:B4
+
+
+
+1. Write a program in Java to print “Hello World”.
+Sol. 
+class First {
+public static void main ( String args[ ]){
+System.out.println( “Hello World” );
+}
+}
+OUTPUT:
+Hello World
+2. Write a program in Java to print these patterns:
+Sol:
+public class Main
+{
+ public static void main (String[]args)
+ {
+ int i,j, n = 5;
+ for ( i=0; i<n; i++)
+ {
+ // inner loop to handle number spaces
+ // values changing acc. to requirement
+ for ( j=n-i; j>1; j--)
+ {
+ // printing spaces
+ System.out.print(" ");
+ }
+ 
+ // inner loop to handle number of columns
+ // values changing acc. to outer loop
+ for ( j=0; j<=i; j++ )
+ {
+ // printing stars
+ System.out.print("* ");
+ }
+ 
+ // ending line after each row
+ System.out.println();
+ }
+ }
+}
+public class Main
+{
+ public static void main(String[] args)
+ {
+ for (int i = 5; i >= 1; i--)
+ {
+ for (int j = 5 - i; j >= 1; j--)
+ {
+ System.out.print(" ");
+ }
+ for (int j = 1; j <= 2 * i - 1; j++)
+ {
+ System.out.print("*");
+ }
+ System.out.println();
+ }
+ }
+}
+3. Write a program in Java to print the table of a number received through command
+line argument,
+Sol:
+public class Main{
+ public static void main(String [] args)
+ {
+ int num=4;
+ for(int i=1;i<=10;i++)
+ {
+ System.out.printf("%d*%d=%d\n",num,i,num*i);
+ }
+ }
+}
+INPUT=4 10
+OUTPUT:
+4*1=4
+4*2=8
+4*3=12
+4*4=16
+4*5=20
+4*6=24
+4*7=28
+4*8=32
+4*9=36
+4*10=4

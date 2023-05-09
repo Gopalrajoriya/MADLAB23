@@ -1,0 +1,148 @@
+ SUBMITTED BY:GOPAL RAJORIYA
+ ENR.NO:211B123
+ BATCH:B4
+ 
+ 
+Q1. Test for Inheritance
+Make a class Mother with int x and void show ( ) as its members. Now create another
+class Child that is derived from the Mother class. Create another class Application to
+test the inheritance.
+SOL:
+Save as Mother.java
+class Mother{
+ int x;
+ void show()
+ {
+ System.out.println("I am mother class");
+ }
+}
+Save as Child.java
+class Child extends Mother{
+ 
+}
+Save as Application.java
+public class Application{
+ public static void main(String[] args)
+ {
+ Mother m=new Mother();
+ m.show();
+ Child c=new Child();
+ c.show();
+ }
+}
+OUTPUT:
+I am mother class
+I am mother class
+2. Test for Overriding
+Make a function with the same return type , name of the function, number and type of
+arguments in the Child class as they are in the Mother class. Change the string to be
+displayed on the screen. For example, if Mother class version of show ( ) was displaying
+“Hello World” then the child class version of show ( ) will display “Hello JUET”. Run the
+application class and discuss the results obtained with your instructor.
+SOL:
+Save as Mother.java
+class Mother{
+ int x;
+ void show()
+ {
+ System.out.println("Hello World");
+ }
+}
+Save as Child.java
+class Child extends Mother{
+ void show()
+ {
+ System.out.println("Hello Juet");
+ }
+}
+Save as Application.java
+public class Application{
+ public static void main(String[] args)
+ {
+ Mother m=new Mother();
+ m.show();
+ Child c=new Child();
+ c.show();
+ }
+}
+OUTPUT:
+Hello world
+Hello Juet
+Inference:child class will override theinherited function mother class
+Q 3. Test for Polymorphism
+Write another statement in Application class: Mother m1=new Child ( ); Now, call show
+() with reference variable m1 and ‘.’ (dot) operator. Discuss the result with your
+instructor. Now, make the method show ( ) static in Mother only and check the results
+after executing Application. Repeat this by making show () static in Child only. Observe
+the errors. Test whether the static methods are inheritable or not. Now make show ()
+static in both Mother as well as in Child and discuss the results with your instructor.
+Make a table to summarize your results.
+SOL:
+Save as Mother.java
+class Mother{
+ int x;
+ void show()
+ {
+ System.out.println("I am mother class");
+ }
+}
+Save as Child.java
+class Child extends Mother{
+ void show()
+ {
+ System.out.println("I am child class");
+ }
+}
+Save as Application.java
+public class Application{
+ public static void main(String[] args)
+ {
+ Mother m1=new Child();
+ m1.show();
+ }
+}
+OUtPUT:
+I am child class
+class Mother{
+ int x;
+ static void show()
+ {
+ System.out.println("I am mother class");
+ }
+}
+class Child extends Mother{
+ static void show()
+ {
+ System.out.println("I am Child class");
+ }
+}
+OUTPUT:
+If only method show is static in mother class or it is static only in child class then it will throw error
+Overridden mother is static:
+But if both mother and child class have method void as static then it give the output:
+I am mother class
+Q 4. Parameterized Constructors
+Create a class One and make a parameterized constructor One( int x){ } inside this class.
+Create a class Two derived from One: class Two extends One { }. Now, compile One and
+then Two. Discuss the results with your instructor. Hint: Class Two should not compile
+and must throw an error. Analyze the error and rectify it.
+Save as One.java:
+class One{
+ int x;
+ public One(int xx){
+ this.x=xx;
+ }
+ 
+}
+Save as Two.java
+class Two extends One{
+ 
+ }
+Save as Main.java
+public class Main{
+ public static void main(String [] args)
+ {
+ Two T=new Two();
+ }
+}
+OUTPUT:error constructor one in class one cannot be applied to given types
